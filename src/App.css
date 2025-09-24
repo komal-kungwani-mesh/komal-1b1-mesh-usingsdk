@@ -1,38 +1,200 @@
-.App {
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+body {
+  background: #f8f8ff;
+  font-family: 'Space Grotesk', 'Poppins', 'Montserrat', Arial, sans-serif;
+}
+
+.mesh-app-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(120deg, #bdb2ff 0%, #ffe066 50%, #0a2342 100%);
+  overflow: hidden;
+}
+
+.mesh-bg-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2.5);
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mesh-header {
+  background: rgba(255,255,255,0.95);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 48px 64px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mesh-title {
+  color: #0a2342;
+  font-size: 2.8rem;
+  font-family: 'Space Grotesk', 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 8px #bdb2ff33;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.crypto-animation {
+.crypto-animation {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mesh-benefits {
+  margin-bottom: 32px;
+}
+
+.mesh-benefit-main {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #0a2342;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.mesh-benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 0 auto;
+  max-width: 400px;
+  color: #4b4b6b;
+  font-size: 1.05rem;
+  text-align: left;
+}
+.mesh-benefit-list li {
+  margin-bottom: 6px;
+  padding-left: 0.5em;
+}
+
+.coin-animation-path {
+  position: relative;
+  width: 350px;
+  height: 120px;
+  margin: 0 auto;
+}
+.coin {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 1.25rem;
+  font-family: 'Space Grotesk', 'Poppins', 'Montserrat', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 8px #0a2342cc, 0 0px 2px #ffe066;
+  box-shadow: 0 4px 24px 0 #0a234255;
+  border: 2.5px solid #fffbe6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: coin-move 3s linear infinite;
+  z-index: 2;
+}
+.coin-usdt {
+  background: radial-gradient(circle at 30% 30%, #26a17b 70%, #1a237e 100%);
+  animation-delay: 0s;
+  border-color: #26a17b;
+}
+.coin-usdc {
+  background: radial-gradient(circle at 70% 30%, #2775ca 70%, #0a2342 100%);
+  animation-delay: 0.75s;
+  border-color: #2775ca;
+}
+.coin-dai {
+  background: radial-gradient(circle at 50% 70%, #f5ac37 70%, #bdb2ff 100%);
+  animation-delay: 1.5s;
+  border-color: #f5ac37;
+}
+.coin-eth {
+  background: radial-gradient(circle at 50% 50%, #bdb2ff 60%, #0a2342 100%);
+  animation-delay: 2.25s;
+  border-color: #bdb2ff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes coin-move {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  20% {
+    transform: translate(-120px, -60px) scale(1.1) rotate(-10deg);
+  }
+  40% {
+    transform: translate(-60px, -100px) scale(1.15) rotate(10deg);
+  }
+  60% {
+    transform: translate(60px, -100px) scale(1.1) rotate(-10deg);
+  }
+  80% {
+    transform: translate(120px, -60px) scale(1.05) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+}
+
+.coin {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 16px 0 #0a234233;
+  animation: float 2.5s ease-in-out infinite;
+  position: relative;
+}
+
+.coin-usdt {
+  background: linear-gradient(135deg, #1a237e 60%, #bdb2ff 100%);
+  color: #fffbe6;
+  animation-delay: 0s;
+}
+.coin-usdc {
+  background: linear-gradient(135deg, #0a2342 60%, #ffe066 100%);
+  color: #bdb2ff;
+  animation-delay: 0.5s;
+}
+.coin-dai {
+  background: linear-gradient(135deg, #ffe066 60%, #bdb2ff 100%);
+  color: #0a2342;
+  animation-delay: 1s;
+}
+.coin-eth {
+  background: linear-gradient(135deg, #bdb2ff 60%, #0a2342 100%);
+  color: #ffe066;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 4px 16px 0 #0a234233;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.08);
+    box-shadow: 0 12px 32px 0 #bdb2ff55;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 4px 16px 0 #0a234233;
   }
 }
